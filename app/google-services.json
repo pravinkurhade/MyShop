@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "411078930281",
+    "firebase_url": "https://myshop-4df7c.firebaseio.com",
+    "project_id": "myshop-4df7c",
+    "storage_bucket": "myshop-4df7c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411078930281:android:3750dbb6265db37d9157f8",
+        "android_client_info": {
+          "package_name": "com.bsktech.myshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411078930281-igoepspeiaves3n7bfqvci1js204qjki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_FhBVH3U2I4NoUPNpol-gYbDPLkEDsdU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411078930281-igoepspeiaves3n7bfqvci1js204qjki.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411078930281:android:7e867653ad6192e19157f8",
+        "android_client_info": {
+          "package_name": "com.bsktech.shopkeeper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411078930281-igoepspeiaves3n7bfqvci1js204qjki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_FhBVH3U2I4NoUPNpol-gYbDPLkEDsdU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411078930281-igoepspeiaves3n7bfqvci1js204qjki.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
