@@ -1,10 +1,15 @@
 package com.bsktech.myshop
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -12,6 +17,7 @@ import kotlinx.android.synthetic.main.activity_my_profile.*
 import kotlinx.android.synthetic.main.content_my_profile.*
 
 class MyProfileActivity : AppCompatActivity() {
+
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,13 +43,39 @@ class MyProfileActivity : AppCompatActivity() {
 
                     textView_name.text = document.data!!["name"].toString()
                     textView_email.text = document.data!!["email"].toString()
-                    textView_phone.text = document.data!!["phone"].toString()
+                   // textView_phone.text = document.data!!["phone"].toString()
 
                     val pathReference = storageRef.child(document.data!!["image"].toString())
 
-                    Glide.with(this)
-                        .load(pathReference)
-                        .into(imageView_image)
+                    Glide.with(this).load(pathReference).listener(object :
+                        RequestListener<Drawable> {
+                        override fun onLoadFailed(
+                            e: GlideException?,
+                            model: Any?,
+                            target: com.bumptech.glide.request.target.Target<Drawable>?,
+                            isFirstResource: Boolean
+                        ): Boolean {
+                            val handler = Handler()
+                            handler.post(Runnable() {
+                                run {
+                                    Glide.with(this@MyProfileActivity)
+                                        .load(document.data!!["image"].toString())
+                                        .into(imageView_image)
+                                }
+                            });
+                            return false
+                        }
+
+                        override fun onResourceReady(
+                            resource: Drawable?,
+                            model: Any?,
+                            target: com.bumptech.glide.request.target.Target<Drawable>?,
+                            dataSource: DataSource?,
+                            isFirstResource: Boolean
+                        ): Boolean {
+                            return false
+                        }
+                    }).into(imageView_image)
                 } else {
                     Log.d(TAG, "No such document")
                 }

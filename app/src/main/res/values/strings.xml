@@ -14,4 +14,168 @@
     <string name="my_profile">My Profile</string>
     <string name="title_activity_my_profile">My Profile</string>
 
+
+    <string name="entry_java_title">Java</string>
+    <string name="entry_java_subtitle">Run the MLKit Showcase written in Java.</string>
+    <string name="entry_kotlin_title">Kotlin</string>
+    <string name="entry_kotlin_subtitle">Run the MLKit Showcase written in Kotlin.</string>
+    <string name="mode_odt_live_title">Object Detection: Live Camera</string>
+    <string name="mode_odt_live_subtitle">A device’s live camera can be used to detect objects in an environment.</string>
+    <string name="mode_odt_static_title">Object Detection: Static Image</string>
+    <string name="mode_odt_static_subtitle">One or more objects can be detected from a provided image.</string>
+    <string name="mode_barcode_live_title">Barcode Scanning</string>
+    <string name="mode_barcode_live_subtitle">Read data encoded in most standard barcode formats.</string>
+    <string name="settings_title">MLKit Showcase Settings</string>
+    <string name="cd_settings_button">Settings</string>
+    <string name="cd_close_button">Back</string>
+    <string name="cd_flash_button">Toggle camera flash</string>
+    <string name="cd_photo_library_button">Upload image</string>
+    <string name="prompt_point_at_an_object">Point your camera at an object</string>
+    <string name="prompt_point_at_a_barcode">Point your camera at a barcode</string>
+    <string name="prompt_hold_camera_steady">Keep camera still for a moment</string>
+    <string name="prompt_move_camera_closer">Move closer to search</string>
+    <string name="prompt_searching">Searching&#8230;</string>
+    <string name="product_search_button">Search object</string>
+    <plurals name="bottom_sheet_title">
+        <item quantity="one">%d match found</item>
+        <item quantity="other">%d matches found</item>
+    </plurals>
+    <string name="static_image_prompt_detected_no_results">No results found</string>
+    <string name="static_image_prompt_detected_results">Tap on a dot to inspect</string>
+    <string name="static_image_card_no_result_title">No result found</string>
+    <string name="static_image_card_no_result_subtitle">Support text place holder</string>
+    <string name="static_image_preview_card_subtitle">+%d more results</string>
+
+    <!-- Strings for camera settings. -->
+    <string name="pref_category_camera">Camera</string>
+    <string name="pref_key_rear_camera_preview_size" translatable="false">rcpvs</string>
+    <string name="pref_key_rear_camera_picture_size" translatable="false">rcpts</string>
+    <string name="pref_title_rear_camera_preview_size">Rear camera preview size</string>
+
+    <!-- Strings for object detection settings. -->
+    <string name="pref_category_object_detection">Object detection</string>
+    <string name="pref_key_object_detector_enable_multiple_objects" translatable="false">odemo</string>
+    <string name="pref_title_object_detector_enable_multiple_objects">Enable multiple objects</string>
+    <string name="pref_key_object_detector_enable_classification" translatable="false">odec</string>
+    <string name="pref_title_object_detector_enable_classification">Enable classification</string>
+
+    <!-- Strings for product search settings. -->
+    <string name="pref_category_product_search">Product search</string>
+    <string name="pref_key_enable_auto_search" translatable="false">pkeas</string>
+    <string name="pref_title_enable_auto_search">Enable auto search</string>
+    <string name="pref_key_confirmation_time_in_manual_search" translatable="false">ctims</string>
+    <string name="pref_title_confirmation_time_in_manual_search">Confirmation time in manual search</string>
+    <string name="pref_summary_confirmation_time_in_manual_search">Ranges from 100ms to 1000ms</string>
+    <string name="pref_key_confirmation_time_in_auto_search" translatable="false">ctias</string>
+    <string name="pref_title_confirmation_time_in_auto_search">Confirmation time in auto search</string>
+    <string name="pref_summary_confirmation_time_in_auto_search">Ranges from 500ms to 2000ms</string>
+
+    <!-- Strings for barcode detection settings. -->
+    <string name="pref_category_barcode_detection">Barcode detection</string>
+    <string name="pref_key_barcode_reticle_width" translatable="false">barcode_brw</string>
+    <string name="pref_title_barcode_reticle_width">Barcode reticle width</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">Relative to the camera view width, ranges from 50% to 95%</string>
+    <string name="pref_key_barcode_reticle_height" translatable="false">barcode_brh</string>
+    <string name="pref_title_barcode_reticle_height">Barcode reticle height</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">Relative to the camera view height, ranges from 20% to 80%</string>
+    <string name="pref_key_enable_barcode_size_check" translatable="false">barcode_ebsc</string>
+    <string name="pref_title_enable_barcode_size_check">Enable barcode size check</string>
+    <string name="pref_summary_enable_barcode_size_check">Will prompt user to move camera closer if the detected barcode is too small</string>
+    <string name="pref_key_minimum_barcode_width" translatable="false">barcode_mbw</string>
+    <string name="pref_title_minimum_barcode_width">Minimum barcode width</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">Relative to the reticle width, ranges from 20% to 80% (only applicable when barcode size check enabled)</string>
+    <string name="pref_key_delay_loading_barcode_result" translatable="false">barcode_dlbr</string>
+    <string name="pref_title_delay_loading_barcode_result">Delay loading barcode result</string>
+    <string name="pref_summary_delay_loading_barcode_result">Will show the loading spinner for 2s</string>
+    <string name="title_activity_store_cart">Store Cart</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="title_activity_order_summary">Order Summary</string>
 </resources>

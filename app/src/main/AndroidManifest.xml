@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bsktech.myshop">
 
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,9 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".OrderSummaryActivity"
+            android:label="@string/title_activity_order_summary"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".StoreCartActivity"
+            android:label="@string/title_activity_store_cart"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".MyProfileActivity"
             android:label="@string/title_activity_my_profile"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SignInActivity"
             android:label="@string/title_activity_sign_in"
@@ -30,6 +43,31 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".mlkit.EntryChoiceActivity"
+            android:exported="true" />
+        <activity
+            android:name=".mlkit.MainMLActivity"
+            android:exported="false"
+            android:theme="@style/AppThemeNew" />
+        <activity
+            android:name=".mlkit.LiveObjectDetectionActivity"
+            android:exported="false"
+            android:theme="@style/AppThemeNew" />
+        <activity
+            android:name=".mlkit.LiveBarcodeScanningActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@style/AppThemeNew" />
+        <activity
+            android:name=".mlkit.StaticObjectDetectionActivity"
+            android:exported="false"
+            android:theme="@style/AppThemeNew" />
+        <activity
+            android:name=".mlkit.settings.SettingsActivity"
+            android:exported="false"
+            android:label="@string/settings_title"
+            android:theme="@style/Theme.AppCompat.Light" />
     </application>
 
 </manifest>

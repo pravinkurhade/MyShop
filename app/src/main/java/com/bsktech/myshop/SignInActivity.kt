@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -12,12 +13,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.content_sign_in.*
 
 class SignInActivity : AppCompatActivity(), View.OnClickListener {
-    // [START declare_auth]
+
     private lateinit var auth: FirebaseAuth
-    // [END declare_auth]
+    private lateinit var db: FirebaseFirestore
 
     private lateinit var googleSignInClient: GoogleSignInClient
 
@@ -25,7 +27,8 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        auth =  FirebaseAuth.getInstance()
+        auth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -74,11 +77,36 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithCredential:success")
                     val user = auth.currentUser
-                    startActivity(Intent(this, MainActivity::class.java))
-                    finish()
+
+                    val docRef = db.collection("customers").document(user!!.uid)
+                    docRef.get()
+                        .addOnSuccessListener { document ->
+                            if (document.exists()) {
+                                startActivity(Intent(this, MainActivity::class.java))
+                                finish()
+                            } else {
+                                val updates = hashMapOf<String, Any>(
+                                    "timestamp" to System.currentTimeMillis(),
+                                    "email" to acct.email.toString(),
+                                    "image" to acct.photoUrl.toString(),
+                                    "name" to acct.displayName.toString(),
+                                    "loginType" to "Google"
+                                )
+                                db.collection("customers").document(user!!.uid).set(updates)
+                                    .addOnSuccessListener {
+                                        startActivity(Intent(this, MainActivity::class.java))
+                                        finish()
+                                    }
+                            }
+                        }
+                        .addOnFailureListener { exception ->
+                            Log.d(TAG, "get failed with ", exception)
+                            Toast.makeText(this, exception.message, Toast.LENGTH_SHORT).show()
+                        }
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
+                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
                 }
             }
     }
