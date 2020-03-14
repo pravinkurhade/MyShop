@@ -227,7 +227,7 @@ class LiveBarcodeScanningActivity : AppCompatActivity(), OnClickListener {
                             val storeItem = document.toObject(StoreItem::class.java)
                             storeItem._id = document.id
 
-                            db.collection("orderItems").whereEqualTo("productCodeStoreId", storeItem.productCode + ":" + storeItem.storeId)
+                            db.collection("orderItems").whereEqualTo("productCodeStoreId", storeItem.productCode + "_" + storeItem.storeId)
                                 .whereEqualTo("uid",auth.currentUser?.uid).get() .addOnSuccessListener { documents1 ->
 
                                     if (documents1.isEmpty){

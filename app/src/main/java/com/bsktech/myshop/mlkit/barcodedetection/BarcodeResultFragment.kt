@@ -98,7 +98,7 @@ class BarcodeResultFragment : BottomSheetDialogFragment(), (StoreItem) -> Unit {
 
     override fun invoke(storeItem: StoreItem) {
 
-        storeItem.productCodeStoreId = storeItem.productCode + ":" + storeItem.storeId
+        storeItem.productCodeStoreId = storeItem.productCode + "_" + storeItem.storeId
         storeItem.uid = auth.currentUser?.uid
         storeItem.timestamp = System.currentTimeMillis()
 

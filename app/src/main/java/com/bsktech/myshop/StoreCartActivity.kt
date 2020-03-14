@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bsktech.myshop.adaptor.StoreCartItemsAdapter
@@ -97,6 +98,14 @@ class StoreCartActivity : AppCompatActivity(), (StoreItem) -> Unit {
                     barcodeFieldList.add(storeItemCart)
                 }
 
+                if (barcodeFieldList.size > 0) {
+                    button_checkout.visibility = View.VISIBLE
+                    textView_total.visibility = View.VISIBLE
+                } else {
+                    button_checkout.visibility = View.GONE
+                    textView_total.visibility = View.GONE
+                }
+
                 listAdapter.notifyDataSetChanged()
                 setTotal();
             }
@@ -109,7 +118,6 @@ class StoreCartActivity : AppCompatActivity(), (StoreItem) -> Unit {
         }
         textView_total.text = "Total ₹ $total"
     }
-
 
 
     companion object {

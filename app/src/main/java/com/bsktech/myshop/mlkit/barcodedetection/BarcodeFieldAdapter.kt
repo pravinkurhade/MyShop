@@ -73,12 +73,14 @@ internal class BarcodeFieldAdapter(
                 if (qauntity.text.toString().toInt() >= 1) {
                     qauntity.text = (qauntity.text.toString().toInt() + 1).toString()
                 }
+                price.text = "₹ " + (barcodeField.price?.times(qauntity.text.toString().toInt()!!))
             }
 
             minus.setOnClickListener {
                 if (qauntity.text.toString().toInt() > 1) {
                     qauntity.text = (qauntity.text.toString().toInt() - 1).toString()
                 }
+                price.text = "₹ " + (barcodeField.price?.times(qauntity.text.toString().toInt()!!))
             }
 
             val storage = FirebaseStorage.getInstance()

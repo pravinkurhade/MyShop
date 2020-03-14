@@ -27,5 +27,6 @@ data class Store(
     val phone: String? = null,
     val address: String? = null,
     val GSTIN: String? = null,
-    val image: String? = null
+    val image: String? = null,
+    val upi: String? = null
 ) : Parcelable
