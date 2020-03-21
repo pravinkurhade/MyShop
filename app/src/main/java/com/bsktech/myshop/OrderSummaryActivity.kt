@@ -48,7 +48,8 @@ class OrderSummaryActivity : AppCompatActivity(), (StoreItem) -> Unit {
         }
 
         button_pay.setOnClickListener {
-            startPayment();
+            //   startPayment();
+            placeOrder("", "")
         }
 
         getAllCartItems()
